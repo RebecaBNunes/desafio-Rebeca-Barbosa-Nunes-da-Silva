@@ -8,33 +8,33 @@ class CaixaDaLanchonete {
         if (!this.formatoPagamentoValido.includes(metodoDePagamento)) {
             return 'Forma de pagamento inválida!';
         }
-        const produtos = [];
+        const itensPedido = [];
         for (let i = 0; i < itens.length; i++) {
             const posicaoVirg = itens[i].indexOf(',');
             const produto = itens[i].slice(0, posicaoVirg);
             const quantidade = Number(itens[i].slice(posicaoVirg + 1));
-            produtos.push({
+            itensPedido.push({
                 produto,
                 quantidade
             });
         }
 
-        if (produtos.length === 0) {
+        if (itensPedido.length === 0) {
             return 'Não há itens no carrinho de compra!';
         }
 
-        for (let produto of produtos) {
+        for (let produto of itensPedido) {
             const { quantidade } = produto;
             if (quantidade === 0) {
                 return 'Quantidade inválida!';
             }
             if (produto.produto === 'chantily') {
-                const principal = produtos.find((item) => item.produto === 'cafe');
+                const principal = itensPedido.find((item) => item.produto === 'cafe');
                 if (!principal) {
                     return 'Item extra não pode ser pedido sem o principal';
                 }
             } else if (produto.produto === 'queijo') {
-                const principal = produtos.find((item) => item.produto === 'sanduiche');
+                const principal = itensPedido.find((item) => item.produto === 'sanduiche');
                 if (!principal) {
                     return 'Item extra não pode ser pedido sem o principal';
                 }
