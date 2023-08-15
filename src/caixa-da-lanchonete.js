@@ -19,9 +19,36 @@ class CaixaDaLanchonete {
             });
         }
 
+        if (produtos.length === 0) {
+            return 'Não há itens no carrinho de compra!';
+        }
+
+        for (let produto of produtos) {
+            const { quantidade } = produto;
+            if (quantidade === 0) {
+                return 'Quantidade inválida!';
+            }
+            if (produto.produto === 'chantily') {
+                const principal = produtos.find((item) => item.produto === 'cafe');
+                if (!principal) {
+                    return 'Item extra não pode ser pedido sem o principal';
+                }
+            } else if (produto.produto === 'queijo') {
+                const principal = produtos.find((item) => item.produto === 'sanduiche');
+                if (!principal) {
+                    return 'Item extra não pode ser pedido sem o principal';
+                }
+            }
+
+            const item = this.itensCardapio.find((item) => item.codigo === produto.produto);
+            if (!item) {
+                return 'Item inválido!';
+            }
+            valorTotal += item.preco * quantidade;
+        }
+
     }
 }
-
 export { CaixaDaLanchonete };
 
 
