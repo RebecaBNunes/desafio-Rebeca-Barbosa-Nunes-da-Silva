@@ -47,8 +47,19 @@ class CaixaDaLanchonete {
             valorTotal += item.preco * quantidade;
         }
 
+        const [dinheiro, debito, credito] = this.formatoPagamentoValido;
+
+        if (metodoDePagamento === dinheiro) {
+            valorTotal -= valorTotal * 5 / 100;
+        } else if (metodoDePagamento === credito) {
+            valorTotal += valorTotal * 3 / 100;
+        }
+
+        const valorTotalFormatado = (`R$ ${(valorTotal / 100).toFixed(2)}`).replace('.', ',');
+        return valorTotalFormatado;
     }
 }
+
 export { CaixaDaLanchonete };
 
 
