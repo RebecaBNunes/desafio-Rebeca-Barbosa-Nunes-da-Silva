@@ -1,5 +1,4 @@
-<div style="text-align:center"><img src="./assets/db-lanches.png" alt="logo da lanchonete DB">
-</div>
+![logo_da_lanchonete_db](./assets/db-lanches.png)
 
 ![badge_concluido](https://img.shields.io/badge/STATUS-CONCLUIDO-green)
 
@@ -9,7 +8,7 @@ Repositório criado para apresentar uma solução para o desafio do programa de 
 
 O caixa da lanchonte da DB precisava ser automatizado e para isso era necessário calcular o valor do pedido de um cliente de acordo com o cardápio, regras e descontos da Lanchonete.
 
-Para resolver, implementei um método que calcular o valor de um pedido, utilizando as tecnologias javascript e Node.js.
+Para resolver, implementei um método que calcula o valor de um pedido, utilizando as tecnologias javascript e Node.js.
 
 ### Regras de Negócio:
 
