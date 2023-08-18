@@ -4,7 +4,7 @@
 
 ## Descrição do Projeto
 
-Repositório criado para apresentar uma solução para o desafio do programa de estágio da DB Start.
+Repositório criado para apresentar uma solução para o desafio do programa de estágio da DB.
 
 O caixa da lanchonte da DB precisava ser automatizado e para isso era necessário calcular o valor do pedido de um cliente de acordo com o cardápio, regras e descontos da Lanchonete.
 
